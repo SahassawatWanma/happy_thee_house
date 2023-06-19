@@ -128,10 +128,10 @@
 
     <div>
         <h1
-            class="text-center my-8 text-3xl font-extralight leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+            class="text-center my-8 text-3xl font-extralight leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl">
             CURRENT + Upcoming Releases</h1>
         {{--flex--}}
-        <div class="grid grid-cols-3 gap-4 content-start my-3 justify-items-center md:grid-cols-1">
+        <div class="grid gap-4 content-start my-3 justify-items-center md:grid-cols-3">
             {{-- Carousel movie list --}}
             <div class="max-w-sm rounded overflow-hidden shadow-lg">
                 <img class="w-full" src="img/3.jpg" alt="Sunset in the mountains">
@@ -194,11 +194,11 @@
 
 
     <footer
-        class="fixed bottom-0 left-0 z-20 w-full p-4 bg-white border-t border-gray-200 shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800 dark:border-gray-600">
-        <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="https://flowbite.com/"
+        class="fixed bottom-0 left-0 z-20 w-full p-4 bg-white border-t border-gray-200 shadow md:flex md:items-center md:justify-between md:p-6">
+        <span class="text-sm text-gray-500 sm:text-center">© 2023 <a href="https://flowbite.com/"
                 class="hover:underline">HappyTheeHouse™</a>. All Rights Reserved.
         </span>
-        <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
+        <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 sm:mt-0">
             <li>
                 <a href="/about" class="mr-4 hover:underline md:mr-6">About</a>
             </li>
