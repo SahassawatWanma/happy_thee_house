@@ -5,10 +5,12 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a class="text-3xl font-bold leading-none" href="{{ route('dashboard') }}">
-                        <img src="svg/mango.svg" class="h-auto max-w-full" style="width:10%">
+                    <a class="text-3xl font-bold leading-none" href="{{ route('dashboard') }}" style="display: inline-block;">
+                        <img src="svg/mango.svg" class="h-auto max-w-xs" style="width: 7vh;">
                     </a>
                 </div>
+
+
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
