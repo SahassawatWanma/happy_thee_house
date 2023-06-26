@@ -10,7 +10,7 @@ class ProductController extends Controller
         $products = Product::all();
         return view('products', compact('products'));
     }
-  
+
     public function productCart()
     {
         return view('cart');
@@ -32,7 +32,7 @@ class ProductController extends Controller
         session()->put('cart', $cart);
         return redirect()->back()->with('success', 'Product has been added to cart!');
     }
-    
+
     public function updateCart(Request $request)
     {
         if($request->id && $request->quantity){
@@ -42,7 +42,7 @@ class ProductController extends Controller
             session()->flash('success', 'Product added to cart.');
         }
     }
-  
+
     public function deleteProduct(Request $request)
     {
         if($request->id) {
