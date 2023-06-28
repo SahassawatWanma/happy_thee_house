@@ -11,7 +11,7 @@ class UserRoleMiddleware
 {
     public function handle($request, Closure $next, $role)
     {
-        if ($request->user() && $request->user()->role === $role) {
+        if ($request->user() && $request->user()->role == $role) {
             return $next($request);
         }
 
