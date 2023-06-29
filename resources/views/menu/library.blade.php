@@ -2,10 +2,10 @@
     <x-slot name="header">
         <ul class="flex">
             <li class="mr-5" style="margin-right: 5%">
-              <a class="inline-block border border-grey-200 rounded py-2 px-4 bg-grey-500 hover:bg-slate-800 text-white" href="#">Store</a>
+              <a class="inline-block border border-white rounded hover:border-gray-200 text-grey-950 hover:bg-gray-200 py-2 px-4" href="{{ route('admin.dashboard') }}">Store</a>
             </li>
             <li class="mr-5">
-              <a class="inline-block border border-white rounded hover:border-gray-200 text-blue-500 hover:bg-gray-200 py-2 px-4" href="#">Library</a>
+              <a class="inline-block border border-gray-800 rounded py-2 px-4 bg-gray-950 hover:bg-gray-500 text-white" href="{{ route('admin.library') }}">Library</a>
             </li>
           </ul>
 

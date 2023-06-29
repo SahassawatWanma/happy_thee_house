@@ -31,7 +31,7 @@ Route::get('blog', function () {
 
  Route::get('/dashboard', [ProductController::class, 'cartView']);
  Route::get('/shopping-cart', [ProductController::class, 'productCart'])->name('shopping.cart');
-Route::get('/product/{id}', [ProductController::class, 'addProducttoCart'])->name('addProduct.to.cart');
+ Route::get('/product/{id}', [ProductController::class, 'addProducttoCart'])->name('addProduct.to.cart');
  Route::patch('/update-shopping-cart', [ProductController::class, 'updateCart'])->name('update.sopping.cart');
  Route::delete('/delete-cart-product', [ProductController::class, 'deleteProduct'])->name('delete.cart.product');
 
@@ -50,6 +50,10 @@ Route::middleware(['auth', 'role:2'])->group(function () {
     Route::get('/admin/dashboard', function () {
         return view('admin_dashboard');
     })->name('admin.dashboard');
+
+    Route::get('/admin/library', function () {
+        return view('menu.library');
+    })->name('admin.library');
 
 });
 
