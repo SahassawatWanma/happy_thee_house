@@ -7,7 +7,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
 </head>
 <body>
-  
+
 <div class="container mt-5">
     <h2 class="mb-3">Laravel 10 Add To Shopping Cart Example - LaravelTuts.com</h2>
     <div class="col-12">
@@ -23,11 +23,11 @@
     @if(session('success'))
         <div class="alert alert-success">
           {{ session('success') }}
-        </div> 
+        </div>
     @endif
     @yield('content')
 </div>
-  
+
 @yield('scripts')
 </body>
 </html>
