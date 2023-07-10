@@ -12,6 +12,9 @@ use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
+use Filament\Forms\Components\Grid;
+use Filament\Forms\Components\Group;
+use Filament\Tables\Columns\Layout\Grid as LayoutGrid;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Illuminate\Support\Str;
@@ -30,27 +33,29 @@ class PostResource extends Resource
             ->schema([
                 Forms\Components\Card::make()
                     ->schema([
-                        Forms\Components\TextInput::make('title')
-                            ->required()
-                            ->maxLength(2048)
-                            ->reactive()
-                            ->afterStateUpdated(function (Closure $set, $state) {
-                                $set('slug', Str::slug($state));
-                            }),
-                        Forms\Components\TextInput::make('slug')
-                            ->required()
-                            ->maxLength(2048),
-                        Forms\Components\TextInput::make('thumbnail')
-                            ->required()
-                            ->maxLength(2048),
-                        Forms\Components\Textarea::make('body')
+                        Forms\Components\Grid::make(2)
+                            ->schema([
+                                Forms\Components\TextInput::make('title')
+                                    ->required()
+                                    ->maxLength(2048)
+                                    ->reactive()
+                                    ->afterStateUpdated(function (Closure $set, $state) {
+                                        $set('slug', Str::slug($state));
+                                    }),
+                                Forms\Components\TextInput::make('slug')
+                                    ->required()
+                                    ->maxLength(2048)
+                            ]),
+                        Forms\Components\FileUpload::make('thumbnail'),
+                        Forms\Components\RichEditor::make('body')
                             ->required(),
                         Forms\Components\Toggle::make('active')
                             ->required(),
                         Forms\Components\DateTimePicker::make('published_at')
                             ->required(),
-                        Forms\Components\Select::make('user_id')
-                            ->relationship('user', 'name')
+                        Forms\Components\Select::make('category_id')
+                            ->multiple()
+                            ->relationship('categories', 'title')
                             ->required(),
                     ])
 

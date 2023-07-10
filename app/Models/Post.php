@@ -10,16 +10,15 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 class Post extends Model
 {
     use HasFactory;
-    protected $fillable = ['title', 'slug', 'thumbnail','body','active','published_at','user_id'];
+    protected $fillable = ['title', 'slug', 'thumbnail', 'body', 'active', 'published_at', 'user_id'];
 
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
-
     }
 
     public function categories(): BelongsToMany
     {
-        return $this->belongsToMany(Category::class);
+        return $this->belongsToMany(Categories::class);
     }
 }
