@@ -57,10 +57,10 @@ class PostResource extends Resource
                             ->multiple()
                             ->relationship('categories', 'title')
                             ->required(),
-                    ])
+                    ])->columnSpan(8)
 
 
-            ]);
+            ])->columns(12);
     }
 
     public static function table(Table $table): Table
